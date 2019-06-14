@@ -35,7 +35,7 @@ class Feed extends Component {
             )});
         })
     }
-    handleClick = id =>{
+    handleLike = id =>{
         api.post(`/posts/${id}/like`);
     }
     render() {
@@ -50,11 +50,11 @@ class Feed extends Component {
                          </div>
                          <img src={more} alt="Mais"/>
                      </header>
-                     <img src={`http://localhost:3333/files/${post.image}`}/>
+                     <img src={`http://localhost:3333/files/${post.image}`} alt=''/>
                      <footer>
                          <div className="actions">
                              <button type="button"
-                                onClick={()=>this.handleClick(post._id)}>
+                                onClick={()=>this.handleLike(post._id)}>
                             <img src={like} alt=""/>
                             </button>
                             <img src={comment} alt=""/>
